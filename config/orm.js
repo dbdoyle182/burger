@@ -39,17 +39,33 @@ var orm = {
             cb(result);
         });
     },
-    updateOne: () => {}
-}
+    updateOne: (table, condition, cb) => {
+        var queryString = 'UPDATE ' + table;
+        queryString += ' SET devoured = true';
+        queryString += ' WHERE ' + condition + ';';
+
+        console.log(queryString);
+        connection.query(queryString, (err, result) => {
+            if (err) {
+                throw err;
+            }
+
+            cb(result);
+        });
+    }
+};
 
 // Testing out functions
+
 // orm.selectAll('burgers', (result) => {
 //     console.log(result);
 // });
 
-orm.insertOne('burgers', 'burger_name', ['Big Kahuna Burger'], (result) => {
+// orm.insertOne('burgers', 'burger_name', ['Big Kahuna Burger'], (result) => {
+//     console.log(result);
+// });
+
+orm.updateOne('burgers', 'id = 1', (result) => {
     console.log(result);
 });
-
-
 module.exports = orm;
