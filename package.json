@@ -1,0 +1,25 @@
+{
+  "name": "burger_app",
+  "version": "1.0.0",
+  "description": "A simple burger app to practice node, express, orm, mysql and handlebars",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbdoyle182/burger.git"
+  },
+  "author": "Daniel Doyle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbdoyle182/burger/issues"
+  },
+  "homepage": "https://github.com/dbdoyle182/burger#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0"
+  }
+}
