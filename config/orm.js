@@ -12,7 +12,9 @@ var printQuestionMarks = (num) => {
     return arr.toString();
 }
 
+// ORM constructor
 var orm = {
+    // Method to select all data from table in mySQL
     selectAll: (tableInput, cb) => {
         var queryString = 'SELECT * FROM ' + tableInput + ';';
         connection.query(queryString, (err, result) => {
@@ -22,6 +24,7 @@ var orm = {
             cb(result);
         });
     },
+    // Method to insert a new item into table in mySQL
     insertOne: (table, columnName, values, cb) => {
         var queryString = 'INSERT INTO ' + table;
         queryString += ' (' + columnName + ') ';
@@ -39,6 +42,7 @@ var orm = {
             cb(result);
         });
     },
+    // Method to update an item in table in mySQL
     updateOne: (table, condition, cb) => {
         var queryString = 'UPDATE ' + table;
         queryString += ' SET devoured = true';
@@ -65,7 +69,9 @@ var orm = {
 //     console.log(result);
 // });
 
-orm.updateOne('burgers', 'id = 1', (result) => {
-    console.log(result);
-});
+// orm.updateOne('burgers', 'id = 1', (result) => {
+//     console.log(result);
+// });
+
+// Export
 module.exports = orm;
