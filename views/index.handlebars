@@ -3,9 +3,25 @@
 <h2>List of da burgs</h2>
 <ul>
     {{#each burgers}}
-    <li>
-        {{burger_name}}
-    </li>
+        {{#unless devoured}}
+            <li>
+                {{burger_name}}
+
+                <button class="burg-eat" data-id='{{id}}'>DEVOUR!!!!</button>
+            </li>
+        {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>List of devoured burgs</h2>
+
+<ul>
+    {{#each burgers}}
+        {{#if devoured}}
+            <li>
+                {{burger_name}}
+            </li>
+        {{/if}}
     {{/each}}
 </ul>
 
@@ -38,4 +54,21 @@
             }
         )
     }); --}}
+$(function(){
+    $('.burg-eat').on('click', (event) => {
+        event.preventDefault();
+        var id = $(this).data("id")
+        console.log('button worked')
+        console.log(id)
+
+        {{!-- $.ajax('/api/burgers/' + id, {
+            type: 'PUT'
+        }).then(() => {
+            console.log('YUM!');
+
+            location.reload();
+        }) --}}
+    })
+});
+
 </script>
