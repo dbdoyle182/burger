@@ -5,7 +5,7 @@
     {{#each burgers}}
         {{#unless devoured}}
             <li>
-                {{burger_name}}
+                {{id}}. {{burger_name}}
 
                 <button class="burg-eat" data-id='{{id}}'>DEVOUR!!!!</button>
             </li>
@@ -54,21 +54,21 @@
             }
         )
     }); --}}
-$(function(){
+{{!-- $(function(){
     $('.burg-eat').on('click', (event) => {
-        event.preventDefault();
-        var id = $(this).data("id")
-        console.log('button worked')
-        console.log(id)
+        
+        var id = $(this).attr('data-id');
+        console.log('clicking ' + id)
+        
 
-        {{!-- $.ajax('/api/burgers/' + id, {
+        $.ajax('/api/burgers/' + id, {
             type: 'PUT'
         }).then(() => {
             console.log('YUM!');
 
             location.reload();
-        }) --}}
+        }) 
     })
-});
+}); --}}
 
 </script>
