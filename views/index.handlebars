@@ -1,3 +1,6 @@
+<h1>Eat Da BURGS?</h1>
+
+<h2>List of da burgs</h2>
 <ul>
     {{#each burgers}}
     <li>
@@ -5,3 +8,34 @@
     </li>
     {{/each}}
 </ul>
+
+<h2>Add a new burg</h2>
+
+<form class='create-burg' method="POST" action="/api/burgers">
+
+    <div class="form-group">
+        <label for="burg">Burger name:</label>
+        <input type="text" id="burg" name="name">
+    </div>
+
+    <button type="submit">Add Burger</button>
+</form>
+
+<script>
+    {{!-- $('.create-burg').on('submit', (event) => {
+        event.preventDefault();
+
+        var newBurg = {
+            burger_name: $('#burg').val().trim()
+        }
+        console.log(newBurg); 
+        $.ajax('/api/burgers', {
+            type:'POST',
+            data: newBurg
+        }).then(() => {
+                console.log('success');
+                location.reload();
+            }
+        )
+    }); --}}
+</script>
