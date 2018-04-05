@@ -1,4 +1,39 @@
+* {
+    font-family: 'Merriweather', serif;
+}
+
 body {
     background-image: url('http://www.grandcasebeachclub.com/wp-content/uploads/2017/04/32.jpg');
-    background-size: 100%
+    background-size: cover;
+    background-attachment: fixed
+}
+
+img {
+    height: 50%;
+    width: 25%
+}
+
+h1 {
+    padding-bottom: 5%
+}
+
+.burger-list {
+    height: 225px;
+    overflow: scroll;
+    margin-bottom: 5%
+}
+
+.burger-list,
+.burger-form,
+img {
+    box-shadow: 20px 20px 50px;
+    margin-bottom: 5%
+}
+
+.burger-title {
+    background-color:rgba(0, 3, 176, 50%);
+}
+
+.burger {
+    margin-bottom: 2%;
 }
