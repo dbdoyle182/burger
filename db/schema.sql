@@ -1,4 +1,5 @@
 -- Creates the database that holds burger information
+DROP DATABASE IF EXISTS burgers_db;
 
 CREATE DATABASE burgers_db;
 

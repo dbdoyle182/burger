@@ -1,21 +1,22 @@
+
 <h1>Eat Da BURGS?</h1>
 
 <h2>List of da burgs</h2>
-<ul>
+<ol>
     {{#each burgers}}
         {{#unless devoured}}
             <li>
-                {{id}}. {{burger_name}}
+                {{burger_name}}
 
                 <button class="burg-eat" data-id='{{id}}'>DEVOUR!!!!</button>
             </li>
         {{/unless}}
     {{/each}}
-</ul>
+</ol>
 
 <h2>List of devoured burgs</h2>
 
-<ul>
+<ol>
     {{#each burgers}}
         {{#if devoured}}
             <li>
@@ -23,7 +24,7 @@
             </li>
         {{/if}}
     {{/each}}
-</ul>
+</ol>
 
 <h2>Add a new burg</h2>
 
@@ -36,39 +37,3 @@
 
     <button type="submit">Add Burger</button>
 </form>
-
-<script>
-    {{!-- $('.create-burg').on('submit', (event) => {
-        event.preventDefault();
-
-        var newBurg = {
-            burger_name: $('#burg').val().trim()
-        }
-        console.log(newBurg); 
-        $.ajax('/api/burgers', {
-            type:'POST',
-            data: newBurg
-        }).then(() => {
-                console.log('success');
-                location.reload();
-            }
-        )
-    }); --}}
-{{!-- $(function(){
-    $('.burg-eat').on('click', (event) => {
-        
-        var id = $(this).attr('data-id');
-        console.log('clicking ' + id)
-        
-
-        $.ajax('/api/burgers/' + id, {
-            type: 'PUT'
-        }).then(() => {
-            console.log('YUM!');
-
-            location.reload();
-        }) 
-    })
-}); --}}
-
-</script>
