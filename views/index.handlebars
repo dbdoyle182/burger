@@ -1,39 +1,59 @@
-
-<h1>Eat Da BURGS?</h1>
-
-<h2>List of da burgs</h2>
-<ol>
-    {{#each burgers}}
-        {{#unless devoured}}
-            <li>
-                {{burger_name}}
-
-                <button class="burg-eat" data-id='{{id}}'>DEVOUR!!!!</button>
-            </li>
-        {{/unless}}
-    {{/each}}
-</ol>
-
-<h2>List of devoured burgs</h2>
-
-<ol>
-    {{#each burgers}}
-        {{#if devoured}}
-            <li>
-                {{burger_name}}
-            </li>
-        {{/if}}
-    {{/each}}
-</ol>
-
-<h2>Add a new burg</h2>
-
-<form class='create-burg' method="POST" action="/api/burgers">
-
-    <div class="form-group">
-        <label for="burg">Burger name:</label>
-        <input type="text" id="burg" name="name">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Eat All the Burgers!</h1>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>List of da burgs</h2>
+                </div>
+                <div class="card-body">
+                    <ol>
+                        {{#each burgers}}
+                            {{#unless devoured}}
+                                <li>
+                                    {{burger_name}}
 
-    <button type="submit">Add Burger</button>
-</form>
+                                    <button class="burg-eat" data-id='{{id}}'>DEVOUR!!!!</button>
+                                </li>
+                            {{/unless}}
+                        {{/each}}
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>List of devoured burgs</h2>
+                </div>
+                <div class="card-body">
+                    <ol>
+                        {{#each burgers}}
+                            {{#if devoured}}
+                                <li>
+                                    {{burger_name}}
+                                </li>
+                            {{/if}}
+                        {{/each}}
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        <h2>Add a new burg</h2>
+
+        <form class='create-burg' method="POST" action="/api/burgers">
+
+            <div class="form-group">
+                <label for="burg">Burger name:</label>
+                <input type="text" id="burg" name="name">
+            </div>
+
+            <button type="submit">Add Burger</button>
+        </form>
+</div>
