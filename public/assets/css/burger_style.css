@@ -27,7 +27,8 @@ h1 {
 .burger-form,
 img {
     box-shadow: 20px 20px 50px;
-    margin-bottom: 5%
+    margin-bottom: 5%;
+    border-radius: 6px
 }
 
 .burger-title {
